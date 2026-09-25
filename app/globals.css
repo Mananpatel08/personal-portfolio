@@ -1,0 +1,375 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Design tokens
+   A warm, paper-like editorial system. Low contrast, high hierarchy:
+   size and weight do the work, colour stays almost entirely out of it.
+   ========================================================================== */
+
+@theme {
+  --font-sans: var(--font-sans-stack), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-mono-stack), ui-monospace, SFMono-Regular, Menlo,
+    monospace;
+
+  /* Surfaces — sampled from the reference. The card sits only six values above
+     the page; the shadow does the separating, not the contrast. Each token is
+     one value light of the sampled colour to offset the grain overlay, so the
+     composited pixels land on #efeeeb / #f5f4f1 / #e7e5e4 exactly. */
+  --color-paper: #f0efec;
+  --color-paper-sunk: #e4e2de;
+  --color-surface: #f6f5f2;
+  --color-raised: #ffffff;
+  /* Label chips read as a tint cut into the card, so they sit below it. */
+  --color-chip: #e8e6e5;
+
+  /* Ink — warm near-black through to a muted label grey. */
+  --color-ink: #1a1815;
+  /* Passes AA against paper at body size — used for anything informative. */
+  --color-ink-soft: #625f58;
+  /* Passes AA-large only. Display type and decorative meta, never small copy. */
+  --color-ink-faint: #8a867b;
+
+  /* Lines — present, but never drawn. */
+  --color-line: rgb(26 24 21 / 0.08);
+  --color-line-strong: rgb(26 24 21 / 0.16);
+
+  /* One accent, used sparingly. Terracotta rather than a bright orange:
+     it holds up against ivory without turning the page into a brand deck. */
+  --color-accent: #b34a22;
+  --color-accent-bright: #d35a28;
+  --color-accent-wash: rgb(179 74 34 / 0.1);
+  --color-live: #35935d;
+
+  /* Type scale — six steps, deliberately. */
+  --text-display: clamp(2.35rem, 1.25rem + 3.6vw, 3.85rem);
+  --text-display--line-height: 1.015;
+  --text-display--letter-spacing: -0.038em;
+  --text-display--font-weight: 500;
+
+  --text-title: clamp(1.75rem, 1.15rem + 2.1vw, 2.7rem);
+  --text-title--line-height: 1.07;
+  --text-title--letter-spacing: -0.032em;
+  --text-title--font-weight: 500;
+
+  --text-head: 1.1875rem;
+  --text-head--line-height: 1.3;
+  --text-head--letter-spacing: -0.019em;
+  --text-head--font-weight: 500;
+
+  --text-lead: 1.0625rem;
+  --text-lead--line-height: 1.62;
+  --text-lead--letter-spacing: -0.009em;
+
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.66;
+  --text-body--letter-spacing: -0.004em;
+
+  --text-micro: 0.75rem;
+  --text-micro--line-height: 1.45;
+  --text-micro--letter-spacing: 0.004em;
+
+  --text-nano: 0.6875rem;
+  --text-nano--line-height: 1.4;
+  --text-nano--letter-spacing: 0.022em;
+
+  --radius-card: 0.75rem;
+  --radius-feature: 1rem;
+  --radius-inner: 0.625rem;
+
+  --shadow-card: 0 1px 2px rgb(26 24 21 / 0.04),
+    0 6px 14px -8px rgb(26 24 21 / 0.1);
+  --shadow-lift: 0 1px 2px rgb(26 24 21 / 0.03),
+    0 18px 40px -22px rgb(26 24 21 / 0.3);
+  --shadow-pill: 0 1px 1.5px rgb(26 24 21 / 0.04);
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-wash);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Headline numerals should line up with the caps around them. */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* ==========================================================================
+   Components — the handful of patterns repeated across the whole site.
+   Everything else is composed with utilities at the call site.
+   ========================================================================== */
+
+@layer components {
+  /* The card: a hair lighter than the page, a hairline border, and a shadow
+     soft enough that you read it as lift rather than as a drop shadow. */
+  .card {
+    position: relative;
+    border-radius: var(--radius-card);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-line);
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-hover {
+    transition:
+      box-shadow 0.45s var(--ease-soft),
+      transform 0.45s var(--ease-soft),
+      border-color 0.45s var(--ease-soft);
+  }
+
+  .card-hover:hover {
+    box-shadow: var(--shadow-lift);
+    transform: translateY(-2px);
+    border-color: var(--color-line-strong);
+  }
+
+  /* Small category tag that opens each card. Measured off the reference:
+     29px tall, 14px side padding, no border and no shadow — it reads as a
+     tint in the surface rather than a chip floating on top of it. */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4375rem;
+    border-radius: 999px;
+    background-color: var(--color-chip);
+    padding: 0.5rem 0.875rem;
+    font-size: var(--text-micro);
+    line-height: 1;
+    letter-spacing: 0.002em;
+    font-weight: 500;
+    color: var(--color-ink-soft);
+    white-space: nowrap;
+
+    & svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  /* Over imagery the tint disappears, so that variant goes light instead. */
+  .pill-light {
+    background-color: var(--color-raised);
+    box-shadow: var(--shadow-pill);
+  }
+
+  /* Diagrams keep the same line weight at every size they're rendered at. */
+  .cover-art * {
+    vector-effect: non-scaling-stroke;
+  }
+
+  /* Recessed panel inside a card — sits at page level, so it reads as a well
+     cut into the surface rather than another box stacked on top. */
+  .well {
+    border-radius: var(--radius-inner);
+    background-color: var(--color-paper);
+    border: 1px solid var(--color-line);
+    box-shadow: inset 0 1px 2px rgb(26 24 21 / 0.025);
+  }
+
+  /* Section index marker: "01 —" in mono, quiet. */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-nano);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink-faint);
+  }
+
+  /* Underline that grows from the left on hover. */
+  .ulink {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 calc(100% - 1px);
+    background-repeat: no-repeat;
+    transition: background-size 0.45s var(--ease-soft);
+  }
+
+  .ulink:hover,
+  a:hover .ulink,
+  .group:hover .ulink {
+    background-size: 100% 1px;
+  }
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+
+/* Paper grain. ~3% opacity — you should never consciously see it, only feel
+   that the background isn't a flat digital fill. */
+@utility grain {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@property --edge-top {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --edge-bottom {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+/* Content that scrolls out of a card fades rather than clips. Both edges are
+   driven by custom properties so a component can turn each one on only when
+   there is actually something hidden in that direction. */
+@utility edge-mask {
+  --edge-top: 0px;
+  --edge-bottom: 0px;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 var(--edge-top),
+    #000 calc(100% - var(--edge-bottom)),
+    transparent 100%
+  );
+  transition: --edge-top 0.3s var(--ease-soft), --edge-bottom 0.3s var(--ease-soft);
+}
+
+/* A scrollbar you can actually see, sized for a card rather than a window. */
+@utility rail-scroll {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(26 24 21 / 0.18);
+    border-radius: 999px;
+  }
+}
+
+@utility hide-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Motion — small, and entirely optional.
+   ========================================================================== */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility rise-in {
+  animation: rise 0.85s var(--ease-soft) both;
+}
+
+@keyframes step-up {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility step-in {
+  animation: step-up 0.4s var(--ease-soft) both;
+}
+
+@keyframes pulse-live {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.82);
+  }
+}
+
+@utility live-dot {
+  animation: pulse-live 2.8s var(--ease-soft) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .card-hover:hover {
+    transform: none;
+  }
+}
