@@ -78,19 +78,19 @@ export function ExperienceCard({ className }: { className?: string }) {
               />
               {item.href ? (
                 <Link href={item.href} className="group block">
-                  <span className="block text-[1.0625rem] leading-tight font-medium tracking-[-0.018em] text-ink">
+                  <span className="block text-h6-medium text-ink">
                     <span className="ulink">{item.label}</span>
                   </span>
-                  <span className="mt-1 block text-micro text-ink-soft">
+                  <span className="mt-1 block text-body-2xs-regular text-ink-soft">
                     {item.period}
                   </span>
                 </Link>
               ) : (
                 <>
-                  <span className="block text-[1.0625rem] leading-tight font-medium tracking-[-0.018em] text-ink">
+                  <span className="block text-h6-medium text-ink">
                     {item.label}
                   </span>
-                  <span className="mt-1 block text-micro text-ink-soft">
+                  <span className="mt-1 block text-body-2xs-regular text-ink-soft">
                     {item.period}
                   </span>
                 </>

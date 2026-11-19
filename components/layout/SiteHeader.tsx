@@ -58,7 +58,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5 sm:px-8 lg:px-10">
         <Link
           href="/"
-          className="group flex items-center gap-2.5 text-micro font-medium tracking-[-0.01em] text-ink"
+          className="group flex items-center gap-2.5 text-body-2xs-medium text-ink"
         >
           <span className="size-1.5 rounded-full bg-accent transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.6]" />
           <span className="ulink">{profile.name}</span>
@@ -71,7 +71,7 @@ export function SiteHeader() {
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
               className={cn(
-                "rounded-full px-3 py-1.5 text-micro transition-colors duration-300",
+                "rounded-full px-3 py-1.5 text-body-2xs-regular transition-colors duration-300",
                 isActive(item.href)
                   ? "text-ink"
                   : "text-ink-soft hover:text-ink",
@@ -87,7 +87,7 @@ export function SiteHeader() {
           onClick={() => setOpenedAt(open ? null : pathname)}
           aria-expanded={open}
           aria-controls="mobile-nav"
-          className="-mr-1 flex items-center gap-2 rounded-full px-2 py-1.5 text-micro text-ink-soft md:hidden"
+          className="-mr-1 flex items-center gap-2 rounded-full px-2 py-1.5 text-body-2xs-regular text-ink-soft md:hidden"
         >
           {open ? "Close" : "Menu"}
           <span className="flex w-3.5 flex-col gap-[3px]">
@@ -118,7 +118,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rise-in border-b border-line py-4 text-title",
+                  "rise-in border-b border-line py-4 text-h2-medium",
                   isActive(item.href) ? "text-ink" : "text-ink-faint",
                 )}
                 style={{ animationDelay: `${i * 45}ms` }}
@@ -127,7 +127,7 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
-          <p className="mt-10 text-micro text-ink-soft">
+          <p className="mt-10 text-body-2xs-regular text-ink-soft">
             {profile.location.short} · {profile.location.offset}
           </p>
         </div>

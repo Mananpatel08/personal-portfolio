@@ -59,7 +59,7 @@ export function AudioIntro({ className }: { className?: string }) {
         className="h-7 flex-1 sm:h-8"
       />
 
-      <span className="shrink-0 font-mono text-nano tabular-nums text-ink-soft sm:text-micro">
+      <span className="shrink-0 font-mono text-caption-sm-regular tabular-nums text-ink-soft sm:text-body-2xs-regular">
         {formatTime(shown)}
       </span>
     </div>

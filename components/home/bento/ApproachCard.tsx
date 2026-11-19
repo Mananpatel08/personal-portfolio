@@ -40,10 +40,10 @@ export function ApproachCard({ className }: { className?: string }) {
         tabIndex={0}
         className="step-in mt-6 flex-1 focus-visible:outline-none"
       >
-        <h2 className="text-[1.6rem] leading-[1.15] font-medium tracking-[-0.032em] text-ink">
+        <h2 className="text-h2-medium text-ink">
           <span className="tabular-nums">{step.id}</span> {step.title}
         </h2>
-        <p className="mt-3 max-w-[54ch] text-body text-ink-soft">{step.body}</p>
+        <p className="mt-3 max-w-[54ch] text-body-sm-regular text-ink-soft">{step.body}</p>
       </div>
 
       <div
@@ -68,7 +68,7 @@ export function ApproachCard({ className }: { className?: string }) {
               tabIndex={selected ? 0 : -1}
               onClick={() => setActive(i)}
               className={cn(
-                "flex h-10 flex-1 items-center justify-center rounded-full text-micro font-medium whitespace-nowrap transition-colors duration-300",
+                "flex h-10 flex-1 items-center justify-center rounded-full text-body-2xs-medium whitespace-nowrap transition-colors duration-300",
                 selected
                   ? "bg-ink text-paper"
                   : "text-ink-soft hover:text-ink",

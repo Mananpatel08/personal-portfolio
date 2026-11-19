@@ -25,7 +25,7 @@ export function ContactBand() {
 
         <a
           href={`mailto:${profile.email}`}
-          className="group mt-8 inline-block text-title font-medium text-ink transition-colors duration-300 hover:text-accent sm:mt-10"
+          className="group mt-8 inline-block text-h2-medium text-ink transition-colors duration-300 hover:text-accent sm:mt-10"
         >
           <span className="ulink">{profile.email}</span>
         </a>

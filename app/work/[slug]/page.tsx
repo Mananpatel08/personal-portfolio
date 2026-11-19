@@ -48,7 +48,7 @@ export default async function CaseStudyPage({
         <div className="pt-8">
           <Link
             href="/work"
-            className="group inline-flex items-center gap-2 text-micro text-ink-soft transition-colors hover:text-ink"
+            className="group inline-flex items-center gap-2 text-body-2xs-regular text-ink-soft transition-colors hover:text-ink"
           >
             <IconArrow
               width={13}
@@ -64,7 +64,7 @@ export default async function CaseStudyPage({
           <h1 className="mt-5 max-w-[16ch] text-display text-ink">
             {project.name}
           </h1>
-          <p className="mt-5 max-w-[52ch] text-lead text-ink-soft">
+          <p className="mt-5 max-w-[52ch] text-body-md-regular text-ink-soft">
             {project.tagline}
           </p>
 
@@ -80,20 +80,20 @@ export default async function CaseStudyPage({
 
           <dl className="border-b border-line lg:col-span-4 lg:col-start-9">
             <div className="border-t border-line py-5">
-              <dt className="text-nano text-ink-soft">Role</dt>
-              <dd className="mt-1.5 text-micro text-ink">{project.role}</dd>
+              <dt className="text-caption-sm-regular text-ink-soft">Role</dt>
+              <dd className="mt-1.5 text-body-2xs-regular text-ink">{project.role}</dd>
             </div>
 
             {project.facts?.map((fact) => (
               <div key={fact.label} className="border-t border-line py-5">
-                <dt className="text-nano text-ink-soft">{fact.label}</dt>
-                <dd className="mt-1.5 text-micro text-ink">{fact.value}</dd>
+                <dt className="text-caption-sm-regular text-ink-soft">{fact.label}</dt>
+                <dd className="mt-1.5 text-body-2xs-regular text-ink">{fact.value}</dd>
               </div>
             ))}
 
             {project.links?.length ? (
               <div className="border-t border-line py-5">
-                <dt className="text-nano text-ink-soft">Links</dt>
+                <dt className="text-caption-sm-regular text-ink-soft">Links</dt>
                 <dd className="mt-2 flex flex-wrap gap-4">
                   {project.links.map((link) => (
                     <a
@@ -101,7 +101,7 @@ export default async function CaseStudyPage({
                       href={link.href}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="inline-flex items-center gap-1.5 text-micro text-ink transition-colors hover:text-accent"
+                      className="inline-flex items-center gap-1.5 text-body-2xs-regular text-ink transition-colors hover:text-accent"
                     >
                       <span className="ulink">{link.label}</span>
                       <IconArrow width={12} height={12} />
@@ -120,7 +120,7 @@ export default async function CaseStudyPage({
         </div>
 
         <div className="mt-20 border-t border-line pt-10 sm:mt-24">
-          <p className="text-nano text-ink-soft">Built with</p>
+          <p className="text-caption-sm-regular text-ink-soft">Built with</p>
           <ul className="mt-4 flex flex-wrap gap-x-2 gap-y-1.5">
             {project.stack.map((tech) => (
               <Tag key={tech}>{tech}</Tag>
@@ -133,8 +133,8 @@ export default async function CaseStudyPage({
           className="group mt-20 flex items-end justify-between gap-8 border-t border-line pt-10 sm:mt-24"
         >
           <div>
-            <p className="text-nano text-ink-soft">Next project</p>
-            <p className="mt-3 text-title text-ink">
+            <p className="text-caption-sm-regular text-ink-soft">Next project</p>
+            <p className="mt-3 text-h2-medium text-ink">
               <span className="ulink">{next.name}</span>
             </p>
           </div>

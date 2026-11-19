@@ -15,7 +15,7 @@ export function Hero() {
           <span className="text-ink-faint">{profile.headline.muted}</span>
         </h1>
 
-        <p className="mt-6 max-w-[58ch] text-lead text-ink-soft sm:mt-7">
+        <p className="mt-6 max-w-[58ch] text-body-md-regular text-ink-soft sm:mt-7">
           {profile.intro}
         </p>
 

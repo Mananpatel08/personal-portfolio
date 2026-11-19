@@ -29,10 +29,10 @@ export function ProjectFeature({
 
         <div className={cn(reverse && "lg:order-1")}>
           <ProjectMeta project={project} />
-          <h2 className="mt-4 text-title text-ink">
+          <h2 className="mt-4 text-h2-medium text-ink">
             <span className="ulink">{project.name}</span>
           </h2>
-          <p className="mt-4 max-w-[46ch] text-lead text-ink-soft">
+          <p className="mt-4 max-w-[46ch] text-body-md-regular text-ink-soft">
             {project.summary}
           </p>
           <ul className="mt-6 flex flex-wrap gap-x-2 gap-y-1.5">

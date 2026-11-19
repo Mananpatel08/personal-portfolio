@@ -38,7 +38,7 @@ export default function ContactPage() {
 
         <a
           href={`mailto:${profile.email}`}
-          className="group mt-9 inline-flex w-fit items-center gap-4 text-title font-medium text-ink transition-colors duration-300 hover:text-accent sm:mt-12"
+          className="group mt-9 inline-flex w-fit items-center gap-4 text-h2-medium text-ink transition-colors duration-300 hover:text-accent sm:mt-12"
         >
           <IconMail
             width={22}
@@ -48,7 +48,7 @@ export default function ContactPage() {
           <span className="ulink break-all">{profile.email}</span>
         </a>
 
-        <p className="mt-9 max-w-[54ch] text-lead text-ink-soft sm:mt-11">
+        <p className="mt-9 max-w-[54ch] text-body-md-regular text-ink-soft sm:mt-11">
           {profile.availability.note} If it involves an API, a database that
           needs rethinking, or a Django project that has outgrown its first
           shape, that&rsquo;s the sort of thing I enjoy.
@@ -56,7 +56,7 @@ export default function ContactPage() {
 
         <div className="mt-10 flex flex-wrap items-center gap-3">
           <StatusPill />
-          <span className="inline-flex items-center gap-2.5 rounded-full border border-line bg-surface px-3.5 py-2 text-micro text-ink-soft shadow-pill">
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-line bg-surface px-3.5 py-2 text-body-2xs-regular text-ink-soft shadow-pill">
             {profile.location.short}
             <span className="font-mono tabular-nums text-ink">
               <LocalTime />
@@ -77,8 +77,8 @@ export default function ContactPage() {
                   <Icon />
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-nano text-ink-soft">{label}</span>
-                  <span className="mt-0.5 block truncate text-micro text-ink">
+                  <span className="block text-caption-sm-regular text-ink-soft">{label}</span>
+                  <span className="mt-0.5 block truncate text-body-2xs-regular text-ink">
                     {value}
                   </span>
                 </span>

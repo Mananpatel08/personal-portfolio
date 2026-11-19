@@ -10,7 +10,7 @@ export function ProjectMeta({
   className?: string;
 }) {
   return (
-    <p className={cn("flex items-center gap-2.5 text-nano text-ink-soft", className)}>
+    <p className={cn("flex items-center gap-2.5 text-caption-sm-regular text-ink-soft", className)}>
       <span className="font-mono tabular-nums">{project.year}</span>
       <span aria-hidden="true" className="h-px w-3 bg-current opacity-40" />
       <span>{project.context}</span>

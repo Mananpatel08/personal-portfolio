@@ -12,7 +12,7 @@ export function ProjectCompact({ project }: { project: Project }) {
         className="card card-hover group flex h-full flex-col p-6"
       >
         <ProjectMeta project={project} />
-        <h2 className="mt-4 flex items-start gap-2 text-head text-ink">
+        <h2 className="mt-4 flex items-start gap-2 text-h5-medium text-ink">
           <span className="ulink">{project.name}</span>
           <IconArrow
             width={13}
@@ -20,10 +20,10 @@ export function ProjectCompact({ project }: { project: Project }) {
             className="mt-1 shrink-0 text-ink-faint opacity-0 transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
           />
         </h2>
-        <p className="mt-2.5 flex-1 text-body text-ink-soft">
+        <p className="mt-2.5 flex-1 text-body-sm-regular text-ink-soft">
           {project.tagline}
         </p>
-        <p className="mt-6 font-mono text-nano text-ink-soft">
+        <p className="mt-6 font-mono text-caption-sm-regular text-ink-soft">
           {project.stack.slice(0, 3).join(" · ")}
         </p>
       </Link>

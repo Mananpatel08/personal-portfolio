@@ -12,10 +12,10 @@ export function ProjectCard({ project }: { project: Project }) {
         <ProjectCover kind={project.cover} />
         <div className="mt-6">
           <ProjectMeta project={project} />
-          <h2 className="mt-3 text-[1.5rem] leading-[1.12] font-medium tracking-[-0.03em] text-ink">
+          <h2 className="mt-3 text-h3-medium text-ink">
             <span className="ulink">{project.name}</span>
           </h2>
-          <p className="mt-2.5 max-w-[42ch] text-body text-ink-soft">
+          <p className="mt-2.5 max-w-[42ch] text-body-sm-regular text-ink-soft">
             {project.tagline}
           </p>
           <ul className="mt-5 flex flex-wrap gap-x-2 gap-y-1.5">

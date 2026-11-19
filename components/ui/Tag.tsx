@@ -12,7 +12,7 @@ export function Tag({
   return (
     <li
       className={cn(
-        "rounded-full border border-line px-2.5 py-1 text-nano text-ink-soft",
+        "rounded-full border border-line px-2.5 py-1 text-caption-sm-regular text-ink-soft",
         className,
       )}
     >

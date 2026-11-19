@@ -38,18 +38,18 @@ export default function ExperiencePage() {
                 className="grid grid-cols-1 gap-6 border-t border-line pt-10 lg:grid-cols-12 lg:gap-12 lg:pt-12"
               >
                 <div className="lg:col-span-3">
-                  <p className="font-mono text-nano tabular-nums text-ink-soft">
+                  <p className="font-mono text-caption-sm-regular tabular-nums text-ink-soft">
                     {formatRange(entry.start, entry.end)}
                   </p>
-                  <p className="mt-3 text-nano text-ink-faint">
+                  <p className="mt-3 text-caption-sm-regular text-ink-faint">
                     {entry.location}
                   </p>
                 </div>
 
                 <div className="lg:col-span-8 lg:col-start-5">
-                  <h2 className="text-title text-ink">{entry.org}</h2>
-                  <p className="mt-2 text-head text-ink-soft">{entry.role}</p>
-                  <p className="mt-5 max-w-[60ch] text-lead text-ink-soft">
+                  <h2 className="text-h2-medium text-ink">{entry.org}</h2>
+                  <p className="mt-2 text-h5-medium text-ink-soft">{entry.role}</p>
+                  <p className="mt-5 max-w-[60ch] text-body-md-regular text-ink-soft">
                     {entry.summary}
                   </p>
 
@@ -58,7 +58,7 @@ export default function ExperiencePage() {
                       {entry.highlights.map((item) => (
                         <li
                           key={item}
-                          className="flex max-w-[62ch] gap-3 text-body text-ink-soft"
+                          className="flex max-w-[62ch] gap-3 text-body-sm-regular text-ink-soft"
                         >
                           <span
                             aria-hidden="true"
@@ -72,7 +72,7 @@ export default function ExperiencePage() {
 
                   {built.length > 0 && (
                     <div className="mt-9">
-                      <p className="text-nano text-ink-soft">Projects</p>
+                      <p className="text-caption-sm-regular text-ink-soft">Projects</p>
                       <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
                         {built.map((project) => (
                           <Link
@@ -81,10 +81,10 @@ export default function ExperiencePage() {
                             className="card card-hover group flex items-start justify-between gap-4 p-5"
                           >
                             <span>
-                              <span className="block text-micro text-ink">
+                              <span className="block text-body-2xs-regular text-ink">
                                 {project.name}
                               </span>
-                              <span className="mt-1 block text-nano text-ink-soft">
+                              <span className="mt-1 block text-caption-sm-regular text-ink-soft">
                                 {project.tagline}
                               </span>
                             </span>

@@ -41,37 +41,263 @@
   --color-accent-wash: rgb(179 74 34 / 0.1);
   --color-live: #35935d;
 
-  /* Type scale — six steps, deliberately. */
+  /* Type scale — mirrors the Timely design system.
+     Utilities are named text-{role}-{weight}, e.g. text-body-sm-regular,
+     text-h3-medium, text-caption-md-semibold. Each one sets size, line-height,
+     letter-spacing and font-weight together, so never pair them with
+     font-*, leading-* or tracking-* utilities.
+       h1–h6        headings        (regular | medium | semibold | bold)
+       body-md…2xs  running copy    (2xs has no bold)
+       caption-md…3xs  labels, meta (2xs and 3xs have no bold)  */
+  --text-h1-regular: 2rem;
+  --text-h1-regular--line-height: 1.2;
+  --text-h1-regular--letter-spacing: 0em;
+  --text-h1-regular--font-weight: 450;
+  --text-h1-medium: 2rem;
+  --text-h1-medium--line-height: 1.2;
+  --text-h1-medium--letter-spacing: 0em;
+  --text-h1-medium--font-weight: 500;
+  --text-h1-semibold: 2rem;
+  --text-h1-semibold--line-height: 1.2;
+  --text-h1-semibold--letter-spacing: 0em;
+  --text-h1-semibold--font-weight: 600;
+  --text-h1-bold: 2rem;
+  --text-h1-bold--line-height: 1.2;
+  --text-h1-bold--letter-spacing: 0em;
+  --text-h1-bold--font-weight: 700;
+
+  --text-h2-regular: 1.75rem;
+  --text-h2-regular--line-height: 1.2;
+  --text-h2-regular--letter-spacing: 0em;
+  --text-h2-regular--font-weight: 450;
+  --text-h2-medium: 1.75rem;
+  --text-h2-medium--line-height: 1.2;
+  --text-h2-medium--letter-spacing: 0em;
+  --text-h2-medium--font-weight: 500;
+  --text-h2-semibold: 1.75rem;
+  --text-h2-semibold--line-height: 1.2;
+  --text-h2-semibold--letter-spacing: 0em;
+  --text-h2-semibold--font-weight: 600;
+  --text-h2-bold: 1.75rem;
+  --text-h2-bold--line-height: 1.2;
+  --text-h2-bold--letter-spacing: 0em;
+  --text-h2-bold--font-weight: 700;
+
+  --text-h3-regular: 1.5rem;
+  --text-h3-regular--line-height: 1.2;
+  --text-h3-regular--letter-spacing: 0em;
+  --text-h3-regular--font-weight: 450;
+  --text-h3-medium: 1.5rem;
+  --text-h3-medium--line-height: 1.2;
+  --text-h3-medium--letter-spacing: 0em;
+  --text-h3-medium--font-weight: 500;
+  --text-h3-semibold: 1.5rem;
+  --text-h3-semibold--line-height: 1.2;
+  --text-h3-semibold--letter-spacing: 0em;
+  --text-h3-semibold--font-weight: 600;
+  --text-h3-bold: 1.5rem;
+  --text-h3-bold--line-height: 1.2;
+  --text-h3-bold--letter-spacing: 0em;
+  --text-h3-bold--font-weight: 700;
+
+  --text-h4-regular: 1.25rem;
+  --text-h4-regular--line-height: 1.2;
+  --text-h4-regular--letter-spacing: 0em;
+  --text-h4-regular--font-weight: 450;
+  --text-h4-medium: 1.25rem;
+  --text-h4-medium--line-height: 1.2;
+  --text-h4-medium--letter-spacing: 0em;
+  --text-h4-medium--font-weight: 500;
+  --text-h4-semibold: 1.25rem;
+  --text-h4-semibold--line-height: 1.2;
+  --text-h4-semibold--letter-spacing: 0em;
+  --text-h4-semibold--font-weight: 600;
+  --text-h4-bold: 1.25rem;
+  --text-h4-bold--line-height: 1.2;
+  --text-h4-bold--letter-spacing: 0em;
+  --text-h4-bold--font-weight: 700;
+
+  --text-h5-regular: 1.125rem;
+  --text-h5-regular--line-height: 1.2;
+  --text-h5-regular--letter-spacing: 0em;
+  --text-h5-regular--font-weight: 450;
+  --text-h5-medium: 1.125rem;
+  --text-h5-medium--line-height: 1.2;
+  --text-h5-medium--letter-spacing: 0em;
+  --text-h5-medium--font-weight: 500;
+  --text-h5-semibold: 1.125rem;
+  --text-h5-semibold--line-height: 1.2;
+  --text-h5-semibold--letter-spacing: 0em;
+  --text-h5-semibold--font-weight: 600;
+  --text-h5-bold: 1.125rem;
+  --text-h5-bold--line-height: 1.2;
+  --text-h5-bold--letter-spacing: 0em;
+  --text-h5-bold--font-weight: 700;
+
+  --text-h6-regular: 1rem;
+  --text-h6-regular--line-height: 1.3;
+  --text-h6-regular--letter-spacing: 0em;
+  --text-h6-regular--font-weight: 450;
+  --text-h6-medium: 1rem;
+  --text-h6-medium--line-height: 1.3;
+  --text-h6-medium--letter-spacing: 0em;
+  --text-h6-medium--font-weight: 500;
+  --text-h6-semibold: 1rem;
+  --text-h6-semibold--line-height: 1.3;
+  --text-h6-semibold--letter-spacing: 0em;
+  --text-h6-semibold--font-weight: 600;
+  --text-h6-bold: 1rem;
+  --text-h6-bold--line-height: 1.3;
+  --text-h6-bold--letter-spacing: 0em;
+  --text-h6-bold--font-weight: 700;
+
+  --text-body-md-regular: 1rem;
+  --text-body-md-regular--line-height: 1.54;
+  --text-body-md-regular--letter-spacing: 0em;
+  --text-body-md-regular--font-weight: 450;
+  --text-body-md-medium: 1rem;
+  --text-body-md-medium--line-height: 1.54;
+  --text-body-md-medium--letter-spacing: 0em;
+  --text-body-md-medium--font-weight: 500;
+  --text-body-md-semibold: 1rem;
+  --text-body-md-semibold--line-height: 1.54;
+  --text-body-md-semibold--letter-spacing: 0em;
+  --text-body-md-semibold--font-weight: 600;
+  --text-body-md-bold: 1rem;
+  --text-body-md-bold--line-height: 1.54;
+  --text-body-md-bold--letter-spacing: 0em;
+  --text-body-md-bold--font-weight: 700;
+
+  --text-body-sm-regular: 0.875rem;
+  --text-body-sm-regular--line-height: 1.54;
+  --text-body-sm-regular--letter-spacing: 0em;
+  --text-body-sm-regular--font-weight: 450;
+  --text-body-sm-medium: 0.875rem;
+  --text-body-sm-medium--line-height: 1.54;
+  --text-body-sm-medium--letter-spacing: 0em;
+  --text-body-sm-medium--font-weight: 500;
+  --text-body-sm-semibold: 0.875rem;
+  --text-body-sm-semibold--line-height: 1.54;
+  --text-body-sm-semibold--letter-spacing: 0em;
+  --text-body-sm-semibold--font-weight: 600;
+  --text-body-sm-bold: 0.875rem;
+  --text-body-sm-bold--line-height: 1.54;
+  --text-body-sm-bold--letter-spacing: 0em;
+  --text-body-sm-bold--font-weight: 700;
+
+  --text-body-xs-regular: 0.8125rem;
+  --text-body-xs-regular--line-height: 1.54;
+  --text-body-xs-regular--letter-spacing: 0em;
+  --text-body-xs-regular--font-weight: 450;
+  --text-body-xs-medium: 0.8125rem;
+  --text-body-xs-medium--line-height: 1.54;
+  --text-body-xs-medium--letter-spacing: 0em;
+  --text-body-xs-medium--font-weight: 500;
+  --text-body-xs-semibold: 0.8125rem;
+  --text-body-xs-semibold--line-height: 1.54;
+  --text-body-xs-semibold--letter-spacing: 0em;
+  --text-body-xs-semibold--font-weight: 600;
+  --text-body-xs-bold: 0.8125rem;
+  --text-body-xs-bold--line-height: 1.54;
+  --text-body-xs-bold--letter-spacing: 0em;
+  --text-body-xs-bold--font-weight: 700;
+
+  --text-body-2xs-regular: 0.75rem;
+  --text-body-2xs-regular--line-height: 1.54;
+  --text-body-2xs-regular--letter-spacing: 0em;
+  --text-body-2xs-regular--font-weight: 450;
+  --text-body-2xs-medium: 0.75rem;
+  --text-body-2xs-medium--line-height: 1.54;
+  --text-body-2xs-medium--letter-spacing: 0em;
+  --text-body-2xs-medium--font-weight: 500;
+  --text-body-2xs-semibold: 0.75rem;
+  --text-body-2xs-semibold--line-height: 1.54;
+  --text-body-2xs-semibold--letter-spacing: 0em;
+  --text-body-2xs-semibold--font-weight: 600;
+
+  --text-caption-md-regular: 0.75rem;
+  --text-caption-md-regular--line-height: 1.2;
+  --text-caption-md-regular--letter-spacing: 0em;
+  --text-caption-md-regular--font-weight: 450;
+  --text-caption-md-medium: 0.75rem;
+  --text-caption-md-medium--line-height: 1.2;
+  --text-caption-md-medium--letter-spacing: 0em;
+  --text-caption-md-medium--font-weight: 500;
+  --text-caption-md-semibold: 0.75rem;
+  --text-caption-md-semibold--line-height: 1.2;
+  --text-caption-md-semibold--letter-spacing: 0em;
+  --text-caption-md-semibold--font-weight: 600;
+  --text-caption-md-bold: 0.75rem;
+  --text-caption-md-bold--line-height: 1.2;
+  --text-caption-md-bold--letter-spacing: 0em;
+  --text-caption-md-bold--font-weight: 700;
+
+  --text-caption-sm-regular: 0.6875rem;
+  --text-caption-sm-regular--line-height: 1.2;
+  --text-caption-sm-regular--letter-spacing: 0em;
+  --text-caption-sm-regular--font-weight: 450;
+  --text-caption-sm-medium: 0.6875rem;
+  --text-caption-sm-medium--line-height: 1.2;
+  --text-caption-sm-medium--letter-spacing: 0em;
+  --text-caption-sm-medium--font-weight: 500;
+  --text-caption-sm-semibold: 0.6875rem;
+  --text-caption-sm-semibold--line-height: 1.2;
+  --text-caption-sm-semibold--letter-spacing: 0em;
+  --text-caption-sm-semibold--font-weight: 600;
+  --text-caption-sm-bold: 0.6875rem;
+  --text-caption-sm-bold--line-height: 1.2;
+  --text-caption-sm-bold--letter-spacing: 0em;
+  --text-caption-sm-bold--font-weight: 700;
+
+  --text-caption-xs-regular: 0.625rem;
+  --text-caption-xs-regular--line-height: 1.2;
+  --text-caption-xs-regular--letter-spacing: 0.01em;
+  --text-caption-xs-regular--font-weight: 450;
+  --text-caption-xs-medium: 0.625rem;
+  --text-caption-xs-medium--line-height: 1.2;
+  --text-caption-xs-medium--letter-spacing: 0.01em;
+  --text-caption-xs-medium--font-weight: 500;
+  --text-caption-xs-semibold: 0.625rem;
+  --text-caption-xs-semibold--line-height: 1.2;
+  --text-caption-xs-semibold--letter-spacing: 0.01em;
+  --text-caption-xs-semibold--font-weight: 600;
+  --text-caption-xs-bold: 0.625rem;
+  --text-caption-xs-bold--line-height: 1.2;
+  --text-caption-xs-bold--letter-spacing: 0.01em;
+  --text-caption-xs-bold--font-weight: 700;
+
+  --text-caption-2xs-regular: 0.5625rem;
+  --text-caption-2xs-regular--line-height: 1.2;
+  --text-caption-2xs-regular--letter-spacing: 0.01em;
+  --text-caption-2xs-regular--font-weight: 450;
+  --text-caption-2xs-medium: 0.5625rem;
+  --text-caption-2xs-medium--line-height: 1.2;
+  --text-caption-2xs-medium--letter-spacing: 0.01em;
+  --text-caption-2xs-medium--font-weight: 500;
+  --text-caption-2xs-semibold: 0.5625rem;
+  --text-caption-2xs-semibold--line-height: 1.2;
+  --text-caption-2xs-semibold--letter-spacing: 0.01em;
+  --text-caption-2xs-semibold--font-weight: 600;
+
+  --text-caption-3xs-regular: 0.5rem;
+  --text-caption-3xs-regular--line-height: 1.4;
+  --text-caption-3xs-regular--letter-spacing: 0em;
+  --text-caption-3xs-regular--font-weight: 450;
+  --text-caption-3xs-medium: 0.5rem;
+  --text-caption-3xs-medium--line-height: 1.4;
+  --text-caption-3xs-medium--letter-spacing: 0em;
+  --text-caption-3xs-medium--font-weight: 500;
+  --text-caption-3xs-semibold: 0.5rem;
+  --text-caption-3xs-semibold--line-height: 1.4;
+  --text-caption-3xs-semibold--letter-spacing: 0em;
+  --text-caption-3xs-semibold--font-weight: 600;
+
+  /* Display sits above the Timely scale (which tops out at h1) and is only
+     used for the page hero headline. */
   --text-display: clamp(2.35rem, 1.25rem + 3.6vw, 3.85rem);
   --text-display--line-height: 1.015;
   --text-display--letter-spacing: -0.038em;
   --text-display--font-weight: 500;
-
-  --text-title: clamp(1.75rem, 1.15rem + 2.1vw, 2.7rem);
-  --text-title--line-height: 1.07;
-  --text-title--letter-spacing: -0.032em;
-  --text-title--font-weight: 500;
-
-  --text-head: 1.1875rem;
-  --text-head--line-height: 1.3;
-  --text-head--letter-spacing: -0.019em;
-  --text-head--font-weight: 500;
-
-  --text-lead: 1.0625rem;
-  --text-lead--line-height: 1.62;
-  --text-lead--letter-spacing: -0.009em;
-
-  --text-body: 0.9375rem;
-  --text-body--line-height: 1.66;
-  --text-body--letter-spacing: -0.004em;
-
-  --text-micro: 0.75rem;
-  --text-micro--line-height: 1.45;
-  --text-micro--letter-spacing: 0.004em;
-
-  --text-nano: 0.6875rem;
-  --text-nano--line-height: 1.4;
-  --text-nano--letter-spacing: 0.022em;
 
   --radius-card: 0.75rem;
   --radius-feature: 1rem;
@@ -107,11 +333,11 @@
     background-color: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-sans);
-    font-size: var(--text-body);
-    line-height: var(--text-body--line-height);
+    font-size: var(--text-body-sm-regular);
+    line-height: var(--text-body-sm-regular--line-height);
+    font-weight: var(--text-body-sm-regular--font-weight);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: "cv11", "ss01";
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
@@ -183,10 +409,10 @@
     border-radius: 999px;
     background-color: var(--color-chip);
     padding: 0.5rem 0.875rem;
-    font-size: var(--text-micro);
+    font-size: var(--text-body-2xs-medium);
     line-height: 1;
     letter-spacing: 0.002em;
-    font-weight: 500;
+    font-weight: var(--text-body-2xs-medium--font-weight);
     color: var(--color-ink-soft);
     white-space: nowrap;
 
@@ -222,7 +448,7 @@
     align-items: center;
     gap: 0.55rem;
     font-family: var(--font-mono);
-    font-size: var(--text-nano);
+    font-size: var(--text-caption-sm-regular);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-ink-faint);

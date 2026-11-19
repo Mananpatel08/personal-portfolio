@@ -63,13 +63,13 @@ export function LocationCard({ className }: { className?: string }) {
       </div>
 
       <div className="relative">
-        <h2 className="text-[1.65rem] leading-[1.1] font-medium tracking-[-0.032em] text-ink">
+        <h2 className="text-h2-medium text-ink">
           {profile.location.city}
         </h2>
-        <p className="mt-1.5 text-micro text-ink-soft">
+        <p className="mt-1.5 text-body-2xs-regular text-ink-soft">
           {profile.location.region}, {profile.location.country}
         </p>
-        <p className="mt-0.5 font-mono text-nano tabular-nums text-ink-soft">
+        <p className="mt-0.5 font-mono text-caption-sm-regular tabular-nums text-ink-soft">
           <LocalTime /> {profile.location.offset}
         </p>
       </div>

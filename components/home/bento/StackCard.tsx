@@ -15,12 +15,12 @@ export function StackCard({ className }: { className?: string }) {
     <Card className={cn("p-4", className)}>
       <div className="flex items-start justify-between gap-6">
         <Pill icon={<IconLayers />}>Stack</Pill>
-        <p className="hidden pt-1 text-nano text-ink-soft sm:block">
+        <p className="hidden pt-1 text-caption-sm-regular text-ink-soft sm:block">
           and the Ubuntu boxes it all runs on
         </p>
       </div>
 
-      <ul className="mt-6 flex flex-wrap items-baseline text-[clamp(1.05rem,0.82rem+0.72vw,1.4rem)] leading-[1.55] font-medium tracking-[-0.024em] sm:mt-7">
+      <ul className="mt-6 flex flex-wrap items-baseline text-h5-medium sm:text-h4-medium sm:mt-7">
         {stackHighlights.map((item, i) => (
           <li key={item} className="whitespace-nowrap">
             <span className={primary.has(item) ? "text-ink" : "text-ink-soft"}>

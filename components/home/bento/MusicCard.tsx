@@ -64,10 +64,10 @@ export function MusicCard({ className }: { className?: string }) {
 
         <div className="flex min-w-0 flex-1 flex-col">
           <div className="min-w-0 flex-1">
-            <h3 className="truncate text-[1.35rem] leading-tight font-medium tracking-[-0.028em] text-ink">
+            <h3 className="truncate text-h4-medium text-ink">
               {track.title}
             </h3>
-            <p className="mt-2 truncate text-[0.9rem] text-ink-soft">
+            <p className="mt-2 truncate text-body-sm-regular text-ink-soft">
               {track.artist}
             </p>
           </div>
@@ -80,7 +80,7 @@ export function MusicCard({ className }: { className?: string }) {
               label={`Seek within ${label}`}
               className="min-w-0 flex-1"
             />
-            <span className="shrink-0 font-mono text-nano tabular-nums text-ink-soft">
+            <span className="shrink-0 font-mono text-caption-sm-regular tabular-nums text-ink-soft">
               {playing || elapsed > 0
                 ? formatTime(elapsed)
                 : known
@@ -138,7 +138,7 @@ export function MusicCard({ className }: { className?: string }) {
             </button>
 
             {track.demo && (
-              <span className="ml-auto pr-1 text-nano text-ink-soft">
+              <span className="ml-auto pr-1 text-caption-sm-regular text-ink-soft">
                 demo audio
               </span>
             )}

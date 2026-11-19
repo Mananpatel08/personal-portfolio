@@ -12,17 +12,17 @@ export function PackageCard({ className }: { className?: string }) {
       </div>
 
       <div className="mt-6 flex-1">
-        <h2 className="text-head text-ink">mssql2mysql</h2>
-        <p className="mt-2 text-body text-ink-soft">
+        <h2 className="text-h5-medium text-ink">mssql2mysql</h2>
+        <p className="mt-2 text-body-sm-regular text-ink-soft">
           Migrates SQL Server to MySQL from a single YAML file.
         </p>
       </div>
 
       <div className="well mt-5 flex items-center gap-2 p-3">
-        <span aria-hidden="true" className="font-mono text-nano text-accent">
+        <span aria-hidden="true" className="font-mono text-caption-sm-regular text-accent">
           $
         </span>
-        <code className="truncate font-mono text-nano text-ink">
+        <code className="truncate font-mono text-caption-sm-regular text-ink">
           pip install mssql2mysql
         </code>
       </div>

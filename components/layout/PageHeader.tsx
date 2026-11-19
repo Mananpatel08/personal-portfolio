@@ -29,7 +29,7 @@ export function PageHeader({
         </h1>
 
         {lead ? (
-          <p className="mt-6 max-w-[58ch] text-lead text-ink-soft">{lead}</p>
+          <p className="mt-6 max-w-[58ch] text-body-md-regular text-ink-soft">{lead}</p>
         ) : null}
 
         {aside ? <div className="mt-8">{aside}</div> : null}

@@ -27,7 +27,7 @@ export default function PlaygroundPage() {
             <li key={fragment.id}>
               <article className="card card-hover p-6 sm:p-7">
                 <div className="flex items-center justify-between gap-4">
-                  <span className="font-mono text-nano tabular-nums text-ink-faint">
+                  <span className="font-mono text-caption-sm-regular tabular-nums text-ink-faint">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   {fragment.fromSlug ? (
@@ -42,17 +42,17 @@ export default function PlaygroundPage() {
                   )}
                 </div>
 
-                <h2 className="mt-5 max-w-[26ch] text-[1.3rem] leading-[1.2] font-medium tracking-[-0.028em] text-ink">
+                <h2 className="mt-5 max-w-[26ch] text-h4-medium text-ink">
                   {fragment.title}
                 </h2>
 
-                <p className="mt-4 max-w-[50ch] text-body text-ink-soft">
+                <p className="mt-4 max-w-[50ch] text-body-sm-regular text-ink-soft">
                   {fragment.note}
                 </p>
 
                 {fragment.snippet ? (
                   <div className="well mt-6 overflow-x-auto p-3.5 hide-scrollbar">
-                    <code className="font-mono text-nano whitespace-pre text-ink-soft">
+                    <code className="font-mono text-caption-sm-regular whitespace-pre text-ink-soft">
                       {fragment.snippet}
                     </code>
                   </div>
@@ -60,7 +60,7 @@ export default function PlaygroundPage() {
 
                 <ul className="mt-6 flex flex-wrap gap-x-2 gap-y-1.5">
                   {fragment.tags.map((tag, t) => (
-                    <li key={tag} className="text-nano text-ink-soft">
+                    <li key={tag} className="text-caption-sm-regular text-ink-soft">
                       {tag}
                       {t < fragment.tags.length - 1 && (
                         <span

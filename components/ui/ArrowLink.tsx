@@ -23,7 +23,7 @@ export function ArrowLink({
   );
 
   const classes = cn(
-    "group/al inline-flex items-center gap-1.5 text-micro font-medium text-ink transition-colors hover:text-accent",
+    "group/al inline-flex items-center gap-1.5 text-body-2xs-medium text-ink transition-colors hover:text-accent",
     className,
   );
 
