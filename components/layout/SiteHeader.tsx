@@ -58,9 +58,8 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5 sm:px-8 lg:px-10">
         <Link
           href="/"
-          className="group flex items-center gap-2.5 text-body-2xs-medium text-ink"
+          className="group flex items-center gap-2.5 text-body-xs-semibold text-ink"
         >
-          <span className="size-1.5 rounded-full bg-accent transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.6]" />
           <span className="ulink">{profile.name}</span>
         </Link>
 

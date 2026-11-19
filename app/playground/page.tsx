@@ -15,8 +15,6 @@ export default function PlaygroundPage() {
   return (
     <>
       <PageHeader
-        index="01"
-        label="Playground"
         title="Small ideas that turned out to be the interesting part."
         lead="Not side projects — smaller than that. Each of these came out of something I was building for another reason, and ended up being the bit I’d actually want to talk about."
       />

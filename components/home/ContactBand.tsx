@@ -13,13 +13,7 @@ export function ContactBand() {
   return (
     <Container>
       <section className="border-t border-line pt-14 sm:pt-20">
-        <p className="eyebrow">
-          <span className="tabular-nums">03</span>
-          <span aria-hidden="true" className="h-px w-5 bg-current opacity-50" />
-          Contact
-        </p>
-
-        <h2 className="mt-6 max-w-[17ch] text-display text-ink">
+        <h2 className="max-w-[17ch] text-display text-ink">
           Building something that needs a backend?
         </h2>
 

@@ -4,7 +4,6 @@ import { Tag } from "@/components/ui/Tag";
 import type { Project } from "@/lib/data/projects";
 import { cn } from "@/lib/utils";
 import { ProjectCover } from "./ProjectCover";
-import { ProjectMeta } from "./ProjectMeta";
 
 /** Top tier: the cover carries the row, text sits beside it, sides alternate. */
 export function ProjectFeature({
@@ -28,8 +27,7 @@ export function ProjectFeature({
         </div>
 
         <div className={cn(reverse && "lg:order-1")}>
-          <ProjectMeta project={project} />
-          <h2 className="mt-4 text-h2-medium text-ink">
+          <h2 className="text-h2-medium text-ink">
             <span className="ulink">{project.name}</span>
           </h2>
           <p className="mt-4 max-w-[46ch] text-body-md-regular text-ink-soft">

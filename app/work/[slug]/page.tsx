@@ -7,7 +7,6 @@ import { Tag } from "@/components/ui/Tag";
 import { IconArrow } from "@/components/ui/icons";
 import { CaseSection } from "@/components/work/CaseSection";
 import { ProjectCover } from "@/components/work/ProjectCover";
-import { ProjectMeta } from "@/components/work/ProjectMeta";
 import { getProject, projects } from "@/lib/data/projects";
 
 export function generateStaticParams() {
@@ -60,8 +59,7 @@ export default async function CaseStudyPage({
         </div>
 
         <header className="pt-10 pb-12 sm:pt-12 sm:pb-14">
-          <ProjectMeta project={project} />
-          <h1 className="mt-5 max-w-[16ch] text-display text-ink">
+          <h1 className="max-w-[16ch] text-display text-ink">
             {project.name}
           </h1>
           <p className="mt-5 max-w-[52ch] text-body-md-regular text-ink-soft">
@@ -82,6 +80,11 @@ export default async function CaseStudyPage({
             <div className="border-t border-line py-5">
               <dt className="text-caption-sm-regular text-ink-soft">Role</dt>
               <dd className="mt-1.5 text-body-2xs-regular text-ink">{project.role}</dd>
+            </div>
+
+            <div className="border-t border-line py-5">
+              <dt className="text-caption-sm-regular text-ink-soft">Year</dt>
+              <dd className="mt-1.5 text-body-2xs-regular text-ink">{project.year}</dd>
             </div>
 
             {project.facts?.map((fact) => (

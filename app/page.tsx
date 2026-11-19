@@ -18,8 +18,6 @@ export default function HomePage() {
       <Container className="mt-28 sm:mt-36">
         <section aria-labelledby="selected-work">
           <SectionHeader
-            index="02"
-            label="Selected work"
             title={
               <span id="selected-work">
                 Things I&rsquo;ve built, and what made them interesting.

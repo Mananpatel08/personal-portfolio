@@ -22,13 +22,7 @@ export default function AboutPage() {
     <>
       <Container>
         <header className="pt-10 pb-14 sm:pt-16 sm:pb-16">
-          <p className="eyebrow">
-            <span className="tabular-nums">01</span>
-            <span aria-hidden="true" className="h-px w-5 bg-current opacity-50" />
-            About
-          </p>
-
-          <div className="mt-8 flex flex-col gap-7 sm:flex-row sm:items-start sm:gap-9">
+          <div className="flex flex-col gap-7 sm:flex-row sm:items-start sm:gap-9">
             <Avatar />
             <h1 className="max-w-[20ch] text-pretty text-display text-ink">
               I learned most of this by being the only backend person on the
@@ -93,12 +87,7 @@ export default function AboutPage() {
         </div>
 
         <section className="mt-24 border-t border-line pt-12 sm:mt-32 sm:pt-16">
-          <p className="eyebrow">
-            <span className="tabular-nums">02</span>
-            <span aria-hidden="true" className="h-px w-5 bg-current opacity-50" />
-            What I use
-          </p>
-          <h2 className="mt-5 max-w-[22ch] text-h2-medium text-ink">
+          <h2 className="max-w-[22ch] text-h2-medium text-ink">
             The tools I reach for, and roughly in what order.
           </h2>
 
@@ -128,12 +117,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-24 border-t border-line pt-12 sm:mt-32 sm:pt-16">
-          <p className="eyebrow">
-            <span className="tabular-nums">03</span>
-            <span aria-hidden="true" className="h-px w-5 bg-current opacity-50" />
-            How I work
-          </p>
-          <h2 className="mt-5 max-w-[22ch] text-h2-medium text-ink">
+          <h2 className="max-w-[22ch] text-h2-medium text-ink">
             Four steps, in the order I actually work in.
           </h2>
 

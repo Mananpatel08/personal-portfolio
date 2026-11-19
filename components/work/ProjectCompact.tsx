@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { IconArrow } from "@/components/ui/icons";
 import type { Project } from "@/lib/data/projects";
-import { ProjectMeta } from "./ProjectMeta";
 
 /** Bottom tier: text only, three to a row. No cover — that’s the difference. */
 export function ProjectCompact({ project }: { project: Project }) {
@@ -11,8 +10,7 @@ export function ProjectCompact({ project }: { project: Project }) {
         href={`/work/${project.slug}`}
         className="card card-hover group flex h-full flex-col p-6"
       >
-        <ProjectMeta project={project} />
-        <h2 className="mt-4 flex items-start gap-2 text-h5-medium text-ink">
+        <h2 className="flex items-start gap-2 text-h5-medium text-ink">
           <span className="ulink">{project.name}</span>
           <IconArrow
             width={13}

@@ -21,8 +21,6 @@ export default function WorkPage() {
   return (
     <>
       <PageHeader
-        index="01"
-        label="Work"
         title={
           <>
             Four production platforms, and three things I built because I wanted
@@ -44,13 +42,7 @@ export default function WorkPage() {
         </div>
 
         <div className="mt-24 border-t border-line pt-12 sm:mt-32 sm:pt-16">
-          <p className="eyebrow">
-            <span className="tabular-nums">02</span>
-            <span aria-hidden="true" className="h-px w-5 bg-current opacity-50" />
-            Also
-          </p>
-
-          <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 sm:mt-12">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2">
             {cards.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}

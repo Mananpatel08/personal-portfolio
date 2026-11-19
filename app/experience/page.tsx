@@ -19,8 +19,6 @@ export default function ExperiencePage() {
   return (
     <>
       <PageHeader
-        index="01"
-        label="Experience"
         title="Where I’ve worked, and what I actually did there."
         lead="One role so far, and four platforms inside it. The useful detail is in what each project demanded rather than in the job title."
       />

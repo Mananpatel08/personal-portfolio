@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Tag } from "@/components/ui/Tag";
 import type { Project } from "@/lib/data/projects";
 import { ProjectCover } from "./ProjectCover";
-import { ProjectMeta } from "./ProjectMeta";
 
 /** Middle tier: cover above, text below, two to a row. */
 export function ProjectCard({ project }: { project: Project }) {
@@ -11,8 +10,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <Link href={`/work/${project.slug}`} className="group block">
         <ProjectCover kind={project.cover} />
         <div className="mt-6">
-          <ProjectMeta project={project} />
-          <h2 className="mt-3 text-h3-medium text-ink">
+          <h2 className="text-h3-medium text-ink">
             <span className="ulink">{project.name}</span>
           </h2>
           <p className="mt-2.5 max-w-[42ch] text-body-sm-regular text-ink-soft">

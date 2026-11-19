@@ -26,13 +26,7 @@ export default function ContactPage() {
   return (
     <Container>
       <div className="flex min-h-[calc(100dvh-14rem)] flex-col justify-center py-16 sm:py-24">
-        <p className="eyebrow">
-          <span className="tabular-nums">01</span>
-          <span aria-hidden="true" className="h-px w-5 bg-current opacity-50" />
-          Contact
-        </p>
-
-        <h1 className="mt-6 max-w-[18ch] text-pretty text-display text-ink">
+        <h1 className="max-w-[18ch] text-pretty text-display text-ink">
           The fastest way to reach me is email.
         </h1>
 
